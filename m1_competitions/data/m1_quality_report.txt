@@ -1,0 +1,11 @@
+M1 Competitions - data quality report
+========================================
+rows_fetched: 6743
+missing_before: {'competition_id': 0, 'competition_name': 0, 'parent_id': 647, 'type': 0, 'gender': 0, 'category_id': 0, 'category_name': 0}
+dropped_missing_id_or_name: 0
+category_name_without_id: 0
+duplicate_competitions_removed: 0
+categories: 18
+competitions: 6743
+parent_ids_not_in_dataset: 3024
+category_fk_violations: 0
