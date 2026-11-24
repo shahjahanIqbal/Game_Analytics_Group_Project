@@ -1,0 +1,53 @@
+M3 Doubles Competitor Rankings - data quality report
+======================================================
+generated_at: 2026-11-24T05:49:03+00:00
+source: file:///E:/Projects/Game_Analytics_Group_Project/m3_doubles_rankings/data/raw_double_competitors_rankings.json
+
+Cleaning
+------------------------------------------------------
+rows_fetched: 1000
+dropped_missing_competitor_id_or_name: 0
+dropped_missing_rank_or_points: 0
+filled_movement: 0
+filled_competitions_played: 0
+filled_country: 0
+filled_country_code: 47
+filled_abbreviation: 0
+negative_points_fixed: 0
+truncated_values: 0
+duplicate_competitors_removed: 0
+competitors: 1000
+competitor_rankings: 1000
+
+Missing values in the raw response
+------------------------------------------------------
+missing_competitor_id: 0
+missing_name: 0
+missing_rank: 0
+missing_points: 0
+missing_movement: 0
+missing_competitions_played: 0
+missing_country: 0
+missing_country_code: 47
+missing_abbreviation: 0
+
+Snapshot
+------------------------------------------------------
+ranking_lists: 2
+snapshot: 2026 - week 48
+lists_detail: ATP (men, 2026 week 48): 500 rows; WTA (women, 2026 week 48): 500 rows
+
+Validation
+------------------------------------------------------
+fk_violations: 0
+competitors_without_ranking: 0
+ranks_below_1: 0
+ranks_above_500: 0
+rank_points_order_violations: 0
+tie_groups: 12
+stable_movement: 225
+positive_movement: 458
+negative_movement: 317
+countries_represented: 72
+highest_points: 11960
+lowest_points: 109
