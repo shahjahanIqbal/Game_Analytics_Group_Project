@@ -1,0 +1,21 @@
+# Secrets and local environment - never commit these
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local scratch output
+m3_doubles_rankings/_test_out/
+m3_doubles_rankings/sample_output/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

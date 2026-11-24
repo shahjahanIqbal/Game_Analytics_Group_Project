@@ -1,0 +1,49 @@
+{
+  "_fixture_note": [
+    "Offline test fixture for m3_rankings_extract.py --from-file.",
+    "The two rows below are the ATP doubles example published in the Sportradar",
+    "Tennis documentation (developer.sportradar.com/tennis/docs/tennis-ig-leaderboards-rankings-standings,",
+    "retrieved 2026-11-24) plus the documented response envelope.",
+    "It exists only to dry-run the pipeline without an API key.",
+    "It is NOT the deliverable dataset - run the script with a real key to",
+    "produce the full 500 + 500 ATP/WTA doubles ranking rows."
+  ],
+  "generated_at": "2026-07-27T21:50:25+00:00",
+  "rankings": [
+    {
+      "type_id": 2,
+      "name": "ATP",
+      "year": 2026,
+      "week": 31,
+      "gender": "men",
+      "competitor_rankings": [
+        {
+          "rank": 1,
+          "movement": 0,
+          "points": 9960,
+          "competitions_played": 20,
+          "competitor": {
+            "id": "sr:competitor:14898",
+            "name": "Heliovaara, Harri",
+            "country": "Finland",
+            "country_code": "FIN",
+            "abbreviation": "HEL"
+          }
+        },
+        {
+          "rank": 1,
+          "movement": 0,
+          "points": 9960,
+          "competitions_played": 20,
+          "competitor": {
+            "id": "sr:competitor:637970",
+            "name": "Patten, Henry",
+            "country": "Great Britain",
+            "country_code": "GBR",
+            "abbreviation": "PAT"
+          }
+        }
+      ]
+    }
+  ]
+}
