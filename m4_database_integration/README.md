@@ -103,4 +103,4 @@ Use parameterized SQL for user-entered filters.
 
 ## Verification
 
-This package was verified end to end against SQL Server 2022 using ODBC Driver 18. Schema creation, an initial load, a repeat load, CSV preflight, database validation, `sql/checks.sql` and `sql/queries.sql` all completed successfully. The M1 SQLite runner and the M3 offline extractor also completed successfully. The M2 and M3 SQL scripts were run in isolated databases with runtime-only path changes for Linux.
+This package was verified end to end against SQL Server 2022 using ODBC Driver 18. Schema creation, an initial load, a repeat load, CSV preflight, database validation, `sql/checks.sql` and `sql/queries.sql` all completed successfully. The M1 SQLite runner and the M3 offline extractor also completed successfully. The M2 transform was run with reconstructed raw inputs and produced the same six datasets as the delivered CSVs. The M2 and M3 SQL scripts were run in isolated databases with runtime-only path changes for Linux.
