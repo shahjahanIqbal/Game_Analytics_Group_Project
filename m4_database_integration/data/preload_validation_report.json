@@ -1,0 +1,13 @@
+{
+  "row_counts": {
+    "categories": 18,
+    "competitions": 6743,
+    "complexes": 787,
+    "venues": 4181,
+    "competitors": 1000,
+    "competitor_rankings": 1000
+  },
+  "distinct_missing_parent_ids_nulled": 3024,
+  "competition_parent_rows_nulled": 6095,
+  "valid_parent_links_preserved": 1
+}
