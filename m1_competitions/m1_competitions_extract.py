@@ -97,6 +97,31 @@ def fetch_competitions(api_key: str) -> dict:
     sys.exit(1)
 
 
+def check_key(api_key: str) -> None:
+    """Make one request and report whether the key is accepted (key never printed)."""
+    print(f"Key length: {len(api_key)}")
+    try:
+        response = requests.get(
+            API_URL, headers={"x-api-key": api_key}, timeout=REQUEST_TIMEOUT
+        )
+    except requests.exceptions.RequestException as exc:
+        print(f"Request failed: {type(exc).__name__}")
+        sys.exit(1)
+
+    if response.status_code == 200:
+        count = len(response.json().get("competitions", []))
+        print(f"OK: key accepted. Competitions returned: {count}")
+    elif response.status_code in (401, 403):
+        print(
+            f"HTTP {response.status_code}: key rejected. Add the Tennis trial "
+            "in the Sportradar marketplace and copy the key again."
+        )
+    elif response.status_code == 429:
+        print("HTTP 429: key works but you are rate limited. Wait and retry.")
+    else:
+        print(f"HTTP {response.status_code}: unexpected response.")
+
+
 def load_from_file(path: str) -> dict:
     """Load a previously saved raw response (useful offline / for testing)."""
     with open(path, "r", encoding="utf-8") as handle:
@@ -223,7 +248,16 @@ def write_report(stats: dict, path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="M1 competitions extractor")
     parser.add_argument("--from-file", help="Use a saved raw JSON instead of the API")
+    parser.add_argument(
+        "--check-key",
+        action="store_true",
+        help="Only test whether the API key is accepted, then exit",
+    )
     args = parser.parse_args()
+
+    if args.check_key:
+        check_key(get_api_key())
+        return
 
     OUTPUT_DIR.mkdir(exist_ok=True)
 
